@@ -23,6 +23,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-DI", "4-DI", "{269E6FEF-2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcata.PayRestaurant.API", "src\Falcata.PayRestaurant.API\Falcata.PayRestaurant.API.csproj", "{A9DF708F-64C4-4AB6-8440-E7E33C7058E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcata.PayRestaurant.DI", "src\Falcata.PayRestaurant.DI\Falcata.PayRestaurant.DI.csproj", "{1990FE0B-3892-42B3-A74C-3F732D5AD7BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcata.PayRestaurant.Application", "src\Falcata.PayRestaurant.Application\Falcata.PayRestaurant.Application.csproj", "{FD9F16B6-7A11-4F25-BFCF-2923B01BC41E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcata.PayRestaurant.Application.Test", "src\Falcata.PayRestaurant.Application.Test\Falcata.PayRestaurant.Application.Test.csproj", "{A82FF0BF-E500-446B-80E7-167DA83A4EBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcata.PayRestaurant.Application.Interfaces", "src\Falcata.PayRestaurant.Application.Interfaces\Falcata.PayRestaurant.Application.Interfaces.csproj", "{5F7AEB11-D37D-4A25-A453-9649D192276C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcata.PayRestaurant.Domain", "src\Falcata.PayRestaurant.Domain\Falcata.PayRestaurant.Domain.csproj", "{61CFEEC0-D4B1-4F6D-BB5F-F54D18DC1DDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,11 +48,36 @@ Global
 		{AF6E3634-DC0A-4BF6-8160-8E4EDBC453C9} = {B73330B4-1450-45CA-B868-708D5871FAD3}
 		{269E6FEF-2632-40E0-8BA9-29D1C0431D33} = {B73330B4-1450-45CA-B868-708D5871FAD3}
 		{A9DF708F-64C4-4AB6-8440-E7E33C7058E9} = {0317C334-3D81-4B1C-8CEB-3DD2820DA22F}
+		{1990FE0B-3892-42B3-A74C-3F732D5AD7BC} = {269E6FEF-2632-40E0-8BA9-29D1C0431D33}
+		{FD9F16B6-7A11-4F25-BFCF-2923B01BC41E} = {5B760D63-BAAE-4005-AFE0-1E110D812449}
+		{A82FF0BF-E500-446B-80E7-167DA83A4EBC} = {5B760D63-BAAE-4005-AFE0-1E110D812449}
+		{5F7AEB11-D37D-4A25-A453-9649D192276C} = {5B760D63-BAAE-4005-AFE0-1E110D812449}
+		{61CFEEC0-D4B1-4F6D-BB5F-F54D18DC1DDF} = {3288B1A0-204F-40F2-806C-69278EEB1566}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A9DF708F-64C4-4AB6-8440-E7E33C7058E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A9DF708F-64C4-4AB6-8440-E7E33C7058E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9DF708F-64C4-4AB6-8440-E7E33C7058E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9DF708F-64C4-4AB6-8440-E7E33C7058E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1990FE0B-3892-42B3-A74C-3F732D5AD7BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1990FE0B-3892-42B3-A74C-3F732D5AD7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1990FE0B-3892-42B3-A74C-3F732D5AD7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1990FE0B-3892-42B3-A74C-3F732D5AD7BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD9F16B6-7A11-4F25-BFCF-2923B01BC41E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD9F16B6-7A11-4F25-BFCF-2923B01BC41E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD9F16B6-7A11-4F25-BFCF-2923B01BC41E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD9F16B6-7A11-4F25-BFCF-2923B01BC41E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A82FF0BF-E500-446B-80E7-167DA83A4EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A82FF0BF-E500-446B-80E7-167DA83A4EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A82FF0BF-E500-446B-80E7-167DA83A4EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A82FF0BF-E500-446B-80E7-167DA83A4EBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7AEB11-D37D-4A25-A453-9649D192276C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7AEB11-D37D-4A25-A453-9649D192276C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7AEB11-D37D-4A25-A453-9649D192276C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7AEB11-D37D-4A25-A453-9649D192276C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61CFEEC0-D4B1-4F6D-BB5F-F54D18DC1DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61CFEEC0-D4B1-4F6D-BB5F-F54D18DC1DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61CFEEC0-D4B1-4F6D-BB5F-F54D18DC1DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61CFEEC0-D4B1-4F6D-BB5F-F54D18DC1DDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
