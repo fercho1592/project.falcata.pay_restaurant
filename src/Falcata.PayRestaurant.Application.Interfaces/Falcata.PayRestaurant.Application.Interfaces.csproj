@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Falcata.PayRestaurant.Domain\Falcata.PayRestaurant.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

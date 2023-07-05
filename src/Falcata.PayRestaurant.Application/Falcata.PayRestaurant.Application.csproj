@@ -6,4 +6,13 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Falcata.PayRestaurant.Application.Interfaces\Falcata.PayRestaurant.Application.Interfaces.csproj" />
+      <ProjectReference Include="..\Falcata.PayRestaurant.Domain\Falcata.PayRestaurant.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.0.1" />
+    </ItemGroup>
+
 </Project>
