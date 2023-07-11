@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcata.PayRestaurant.Appli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcata.PayRestaurant.Domain", "src\Falcata.PayRestaurant.Domain\Falcata.PayRestaurant.Domain.csproj", "{61CFEEC0-D4B1-4F6D-BB5F-F54D18DC1DDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcata.PayRestaurant.Persistence", "src\Falcata.PayRestaurant.Persistence\Falcata.PayRestaurant.Persistence.csproj", "{81459FB3-7652-4D88-91F3-AEC311254041}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,7 @@ Global
 		{A82FF0BF-E500-446B-80E7-167DA83A4EBC} = {5B760D63-BAAE-4005-AFE0-1E110D812449}
 		{5F7AEB11-D37D-4A25-A453-9649D192276C} = {5B760D63-BAAE-4005-AFE0-1E110D812449}
 		{61CFEEC0-D4B1-4F6D-BB5F-F54D18DC1DDF} = {3288B1A0-204F-40F2-806C-69278EEB1566}
+		{81459FB3-7652-4D88-91F3-AEC311254041} = {AF6E3634-DC0A-4BF6-8160-8E4EDBC453C9}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A9DF708F-64C4-4AB6-8440-E7E33C7058E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -79,5 +82,9 @@ Global
 		{61CFEEC0-D4B1-4F6D-BB5F-F54D18DC1DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61CFEEC0-D4B1-4F6D-BB5F-F54D18DC1DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61CFEEC0-D4B1-4F6D-BB5F-F54D18DC1DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81459FB3-7652-4D88-91F3-AEC311254041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81459FB3-7652-4D88-91F3-AEC311254041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81459FB3-7652-4D88-91F3-AEC311254041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81459FB3-7652-4D88-91F3-AEC311254041}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
