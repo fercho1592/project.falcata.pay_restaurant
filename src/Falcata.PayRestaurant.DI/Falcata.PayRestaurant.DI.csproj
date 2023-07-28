@@ -13,6 +13,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Falcata.PayRestaurant.Application.Interfaces\Falcata.PayRestaurant.Application.Interfaces.csproj" />
       <ProjectReference Include="..\Falcata.PayRestaurant.Application\Falcata.PayRestaurant.Application.csproj" />
+      <ProjectReference Include="..\Falcata.PayRestaurant.Persistence\Falcata.PayRestaurant.Persistence.csproj" />
     </ItemGroup>
 
 </Project>
