@@ -5,5 +5,5 @@ namespace Falcata.PayRestaurant.Persistence.Contexts;
 
 public interface IMainDbContext
 {
-    
+    DbSet<User> Users { get; set; }
 }

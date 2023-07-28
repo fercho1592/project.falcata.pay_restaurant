@@ -1,3 +1,4 @@
+using Falcata.PayRestaurant.Domain.Models.MainSchema;
 using Falcata.PayRestaurant.Persistence.Configurations.MainSchema;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,4 +19,5 @@ public class MainDbContext: BaseDdContext, IMainDbContext
 
     //entities
     //public DbSet<Student> Students { get; set; }
+    public DbSet<User> Users { get; set; }
 }
