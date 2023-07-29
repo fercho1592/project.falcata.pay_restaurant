@@ -2,15 +2,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Falcata.PayRestaurant.Persistence.Contexts;
 
-public abstract class BaseDdContext : DbContext
+public abstract class BaseDbContext : DbContext
 {
-    protected BaseDdContext(DbContextOptions ctxOptions) : base(ctxOptions)
+    protected BaseDbContext(DbContextOptions ctxOptions) : base(ctxOptions)
     {
     }
 
     protected void SetEntityConfigurations(ModelBuilder builder, Type entityConfigurationType, string schema)
     {
-        var entityConfigurations = typeof(BaseDdContext).Assembly
+        var entityConfigurations = typeof(BaseDbContext).Assembly
             .GetTypes()
             .Where(t => t is {IsClass: true, IsAbstract: false} && t.GetInterfaces()
                 .Any(x => x.IsGenericType && x.GetGenericTypeDefinition() == entityConfigurationType));
