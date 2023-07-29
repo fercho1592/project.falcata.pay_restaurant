@@ -12,7 +12,8 @@ public abstract class BaseDdContext : DbContext
     {
         var entityConfigurations = typeof(BaseDdContext).Assembly
             .GetTypes()
-            .Where(t => t is {IsClass: true, IsAbstract: false} && t.IsAssignableFrom(entityConfigurationType));
+            .Where(t => t is {IsClass: true, IsAbstract: false} && t.GetInterfaces()
+                .Any(x => x.IsGenericType && x.GetGenericTypeDefinition() == entityConfigurationType));
 
         var applyConfigurationMethod = typeof(ModelBuilder)
             .GetMethods()
@@ -22,8 +23,8 @@ public abstract class BaseDdContext : DbContext
 
         foreach (var config in entityConfigurations)
         {
-            var entityType = config.GenericTypeArguments[0];
-            var configurationInstance = Activator.CreateInstance(config, args: new object [] {schema});
+            var entityType = config.GetInterfaces().First().GenericTypeArguments[0];
+            var configurationInstance = Activator.CreateInstance(config, args: new object [] {/*schema*/});
 
             var target = applyConfigurationMethod.MakeGenericMethod(entityType);
             target.Invoke(builder, new [] { configurationInstance });
