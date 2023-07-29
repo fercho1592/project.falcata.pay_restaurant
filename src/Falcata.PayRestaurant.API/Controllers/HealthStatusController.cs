@@ -1,5 +1,7 @@
 using System.Text;
+using Falcata.PayRestaurant.Application.Interfaces.QueryBuilders;
 using Falcata.PayRestaurant.Application.Interfaces.Repositories.Users;
+using Falcata.PayRestaurant.Domain.Models.MainSchema;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +20,7 @@ public class HealthStatusController: BaseController
     }
 
     [HttpGet("/")]
-    public async Task<string> ServiceHealthAsync(CancellationToken cancellationToken)
+    public async Task<string> ServiceHealthAsync([FromQuery] string email, CancellationToken cancellationToken)
     {
         StringBuilder result = new StringBuilder();
 
@@ -26,7 +28,13 @@ public class HealthStatusController: BaseController
         
         try
         {
-            var userList = await _userQueryRepository.UserListAsync(cancellationToken);
+            IQueryBuilder<User> userQuery = _userQueryRepository.NewQueryBuilder();
+            userQuery.NoTracking();
+            if (!string.IsNullOrWhiteSpace(email))
+                userQuery.SetPredicate(x => x.Email.Contains(email));
+
+            var userList = await _userQueryRepository.ListAsync(userQuery, cancellationToken);
+            
             result.AppendLine("Users:");
             foreach (var user in userList)
                 result.AppendLine($"{user.Email}");
