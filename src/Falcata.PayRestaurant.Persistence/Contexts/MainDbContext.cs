@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Falcata.PayRestaurant.Persistence.Contexts;
 
-public class MainDbContext: BaseDdContext, IMainDbContext
+public class MainDbContext: BaseDbContext, IMainDbContext
 {
     public MainDbContext(DbContextOptions options) : base(options)
     {
