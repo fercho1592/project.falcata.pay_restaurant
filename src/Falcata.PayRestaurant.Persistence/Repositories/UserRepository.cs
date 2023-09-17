@@ -8,14 +8,12 @@ using Microsoft.Extensions.Logging;
 
 namespace Falcata.PayRestaurant.Persistence.Repositories;
 
-public class UserRepository: BaseRepository<User, int>, IUserQueryRepository
+public class UserRepository: BaseRepository<User, int, MainDbContext>, IUserQueryRepository
 {
-    private readonly IMainDbContext _context;
     private readonly ILogger<UserRepository> _logger;
 
-    public UserRepository(IMainDbContext context, ILogger<UserRepository> logger): base(logger)
+    public UserRepository(MainDbContext context, ILogger<UserRepository> logger): base(context, logger)
     {
-        _context = context ?? throw new ArgumentNullException(nameof(context));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
