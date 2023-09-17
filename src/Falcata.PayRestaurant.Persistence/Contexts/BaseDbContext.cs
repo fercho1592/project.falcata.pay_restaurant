@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Falcata.PayRestaurant.Persistence.Contexts;
 
-public abstract class BaseDbContext : DbContext
+public abstract class BaseDbContext : DbContext, IBaseDbContext
 {
     protected BaseDbContext(DbContextOptions ctxOptions) : base(ctxOptions)
     {
@@ -30,4 +30,7 @@ public abstract class BaseDbContext : DbContext
             target.Invoke(builder, new [] { configurationInstance });
         }
     }
+
+
+    public async Task ExecuteSaveChangesAsync(CancellationToken cancellationToken) => await base.SaveChangesAsync(cancellationToken);
 }

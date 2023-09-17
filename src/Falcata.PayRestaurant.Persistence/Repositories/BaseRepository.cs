@@ -16,7 +16,7 @@ public abstract class BaseRepository<TEntity, TKey, TDbContext>:
     IUpdateCommandRepository<TEntity, TKey>,
     IDeleteCommandRepository<TEntity, TKey>
     where TEntity : BaseEntity<TKey>
-    where TDbContext : BaseDbContext
+    where TDbContext : IBaseDbContext
 {
     protected readonly TDbContext _context;
     private readonly ILogger _logger;
@@ -56,7 +56,7 @@ public abstract class BaseRepository<TEntity, TKey, TDbContext>:
     {
         var trackedEntity = Entities.Add(entity);
 
-        await _context.SaveChangesAsync(cancellationToken);
+        await _context.ExecuteSaveChangesAsync(cancellationToken);
 
         return trackedEntity.State == EntityState.Added;
     }
@@ -67,7 +67,7 @@ public abstract class BaseRepository<TEntity, TKey, TDbContext>:
         var trackedEntity = Entities.Update(entity);
 
         var initialState = trackedEntity.State;
-        await _context.SaveChangesAsync(cancellationToken);
+        await _context.ExecuteSaveChangesAsync(cancellationToken);
 
         return trackedEntity.State == EntityState.Unchanged && initialState == EntityState.Modified; 
     }
@@ -76,7 +76,7 @@ public abstract class BaseRepository<TEntity, TKey, TDbContext>:
     {
         var trackedEntity = Entities.Remove(entity);
         
-        await _context.SaveChangesAsync(cancellationToken);
+        await _context.ExecuteSaveChangesAsync(cancellationToken);
 
         return trackedEntity.State == EntityState.Deleted;
     }
