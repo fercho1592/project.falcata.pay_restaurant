@@ -3,6 +3,7 @@ using Falcata.PayRestaurant.Domain.Models.MainSchema;
 
 namespace Falcata.PayRestaurant.Application.Interfaces.Repositories.Users;
 
-public interface IUserQueryRepository : IQueryRepository<User, int>, IQueryBuilderProvider<IUserQueryBuilder, User>
+public interface IUserQueryRepository : IQueryRepository<User, int>, 
+    IQueryBuilderProvider<IUserQueryBuilder, User>
 {
 }
