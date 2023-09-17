@@ -3,7 +3,7 @@ using Falcata.PayRestaurant.Domain.Models.MainSchema;
 
 namespace Falcata.PayRestaurant.Persistence.Contexts;
 
-public interface IMainDbContext
+public interface IMainDbContext: IBaseDbContext
 {
     DbSet<User> Users { get; set; }
 }
