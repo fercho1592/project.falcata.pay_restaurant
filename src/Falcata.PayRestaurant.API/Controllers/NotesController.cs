@@ -1,5 +1,6 @@
 using Falcata.PayRestaurant.Application.Features.Notes;
 using Falcata.PayRestaurant.Application.Features.Notes.CreateNote;
+using Falcata.PayRestaurant.Application.Features.Notes.DeleteNote;
 using Falcata.PayRestaurant.Application.Features.Notes.GetNotes;
 using Falcata.PayRestaurant.Application.Features.Notes.ModifyNote;
 using MediatR;
@@ -39,6 +40,6 @@ public class NotesController: BaseController
     [HttpDelete("{noteId:int}")]
     public async Task<bool> GetNotesAsync(int noteId)
     {
-        throw new NotImplementedException();
+        return await _mediator.Send(new DeleteNoteCommand(){NoteId = noteId});
     }
 }
