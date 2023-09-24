@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Falcata.PayRestaurant.API.Controllers;
 
 [Route("[controller]")]
+[ApiController]
 public class HealthStatusController: BaseController
 {
     private readonly IMediator _mediator;
@@ -20,7 +21,7 @@ public class HealthStatusController: BaseController
     }
 
     [HttpGet("/")]
-    public async Task<string> ServiceHealthAsync([FromQuery] string email, CancellationToken cancellationToken)
+    public async Task<string> ServiceHealthAsync([FromQuery] string? email,CancellationToken cancellationToken)
     {
         StringBuilder result = new StringBuilder();
 
