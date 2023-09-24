@@ -6,4 +6,5 @@ namespace Falcata.PayRestaurant.Persistence.Contexts;
 public interface IMainDbContext: IBaseDbContext
 {
     DbSet<User> Users { get; set; }
+    DbSet<Note> Notes { get; set; }
 }

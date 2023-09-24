@@ -1,4 +1,5 @@
 using System.Reflection;
+using Falcata.PayRestaurant.Application.Interfaces.Repositories.Notes;
 using Falcata.PayRestaurant.Application.Interfaces.Repositories.Users;
 using Falcata.PayRestaurant.Persistence.Contexts;
 using Falcata.PayRestaurant.Persistence.Repositories;
@@ -20,10 +21,15 @@ public static class PersistenceContainers
 
     private static void RegisterMainRepositories(this IServiceCollection service, Assembly[] assemblies)
     {
-        service.AddScoped(typeof(IUserQueryRepository), typeof(UserRepository));
-        
+        //service.AddScoped(typeof(IUserQueryRepository), typeof(UserRepository));
+
         service.AddScoped<UserRepository>()
-            .AddScoped<IUserQueryRepository>(x => x.GetService<UserRepository>() ?? throw new InvalidOperationException());
+            .AddScoped<NoteRepository>();
+            
+        service
+            .AddScoped<IUserQueryRepository>(x => x.GetService<UserRepository>() ?? throw new InvalidOperationException())
+            .AddScoped<INotesCommandRepository>(x => x.GetService<NoteRepository>() ?? throw new InvalidOperationException())
+            .AddScoped<INotesQueryRepository>(x => x.GetService<NoteRepository>() ?? throw new InvalidOperationException());
     }
 
     private static void RegisterContext(this IServiceCollection service, Assembly[] assemblies)
